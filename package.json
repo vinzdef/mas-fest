@@ -40,6 +40,7 @@
   },
   "dependencies": {
     "jquery": "^2.2.3",
-    "normalize.css": "^4.1.1"
+    "normalize.css": "^4.1.1",
+    "tabletop": "^1.4.3"
   }
 }

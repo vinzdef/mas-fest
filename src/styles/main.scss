@@ -1,4 +1,15 @@
 @import "~normalize.css/normalize";
-@import "design/base";
 
-@import "components/sections.scss";
+@import "design/base";
+@import "design/palette";
+@import "design/mixins";
+
+@import "elements/sections";
+@import "elements/header";
+@import "elements/intro-logo";
+@import "elements/background";
+@import "elements/artist";
+@import "elements/day-select";
+
+@import "sections/home";
+@import "sections/schedule";

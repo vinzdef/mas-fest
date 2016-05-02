@@ -1,0 +1,8 @@
+#Home {
+    .IntroLogo {
+        @include center-absolute;
+        width: auto;
+    }
+
+    min-height: calc(100% - 5.5rem);
+}

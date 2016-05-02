@@ -30,10 +30,6 @@ module.exports = {
 		]
 	},
 
-	externals: {
-		jquery: 'jQuery'
-	},
-
 	postcss: function() {
 		return [autoprefixer]
 	},

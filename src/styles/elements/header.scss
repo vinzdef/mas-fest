@@ -1,0 +1,30 @@
+#Header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+
+    background: linear-gradient(rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.0) 90%);
+
+    color: white;
+
+    ul {
+        padding: 1rem;
+        float: right;
+        list-style: none;
+
+        li {
+            padding: 0 1rem;
+            display: inline-block;
+        }
+    }
+
+    .Header_Link {
+        text-decoration: none;
+        color: inherit;
+
+        &.selected {
+            border-bottom: 2px solid white;
+        }
+    }
+}

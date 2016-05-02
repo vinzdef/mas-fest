@@ -1,0 +1,15 @@
+.IntroLogo {
+    position: fixed;
+    text-align: center;
+    font-size: 5rem;
+
+    .fat {
+        font-weight: bold;
+        text-transform: uppercase;
+        display: block;
+    }
+
+    .skinny {
+        display: block;
+    }
+}

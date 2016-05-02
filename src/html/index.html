@@ -12,10 +12,45 @@
     </style>
 </head>
 <body>
+    <div id="Background"></div>
 
-    <section id="Home"></section>
+    <nav id="Header">
+        <ul>
+            <li><a class="Header_Link internal" href="#">Home</a></li>
+            <li><a class="Header_Link internal" href="#">Programma</a></li>
+            <li><a class="Header_Link internal" href="#">About</a></li>
+        </ul>
+    </nav>
+
+    <section id="Home">
+        <h1 class="IntroLogo">
+            <span class="fat">MAS</span>
+            <span class="hand">fest</span>
+        </h1>
+    </section>
+
+
+    <section id="Schedule">
+        <div class="DaySelect">
+            <h4>
+                Giorno:
+            </h4>
+            <select class="DaySelect_Input">
+            </select>
+        </div>
+
+        <div class="Artist_Wrapper">
+            <div class="Artist Template">
+                <img class="Artist_Photo" src="https://unsplash.it/200/300" alt="">
+                <h3 class="Artist_Name"></h3><p class="Artist_Hour"></p>
+                <p class="Artist_Bio"></p>
+            </div>
+        </div>
+
+    </section>
+
+
     <section id="About"></section>
-    <section id="Schedule"></section>
 
 </body>
 </html>

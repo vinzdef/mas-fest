@@ -1,4 +1,8 @@
 import Styles from './styles/main'
+import $ from 'jquery'
 
-console.log('Silence is golden')
+import Application from './scripts/application'
 
+$(function() {
+	window.MASFest = new Application()
+})

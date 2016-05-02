@@ -1,0 +1,40 @@
+.Artist {
+    padding: 1rem;
+    margin: 1rem;
+
+    @include elevation(1);
+    transition: box-shadow 0.2s;
+    &:hover {
+        @include elevation(2);
+    }
+
+    background-color: $c-artist-bg;
+    border-radius: 2px;
+
+    &_Photo {
+        width: 14rem;
+        height: 12rem;
+        float: left;
+        margin-right: 2rem;
+    }
+
+    &_Name, &_Hour {
+        display: inline-block;
+    }
+
+    &_Hour {
+        color: currentColor;
+        opacity: 0.7;
+        font-weight: bold;
+
+        &:before {
+            content: '-';
+            padding: 0.4rem;
+        }
+    }
+
+    &_Bio {
+        padding-top: 1rem;
+        padding-right: 2rem;
+    }
+}
