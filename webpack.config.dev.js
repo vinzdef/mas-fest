@@ -18,7 +18,7 @@ module.exports = {
 				exclude: /(node_modules)/,
 				loader: 'babel',
 				query: {
-					presets: ['react', 'es2015', 'react-hmre']
+					presets: ['es2015']
 				}
 			},
 			{
@@ -28,6 +28,10 @@ module.exports = {
 			{ test: /\.(svg|jpg|png)$/, loader: 'url'},
 			{ test: /\.json$/, loader: 'json' }
 		]
+	},
+
+	externals: {
+		jquery: 'jQuery'
 	},
 
 	postcss: function() {
