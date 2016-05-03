@@ -3,10 +3,8 @@
     height: auto;
     box-shadow: 0 -4px 10px rgba(#000, 0.25), 0 8px 10px rgba(#000, 0.2);
 
-    min-height: 50%;
     & > * {
         opacity: 0.0001;
-        transition: opacity 0.2s;
     }
 
     .DaySelect {
@@ -17,7 +15,7 @@
     }
 
     .Artist_Wrapper {
-        padding: 2rem 1rem;
+        padding: 0 1rem 2rem;
         width: 100%;
         display: flex;
         flex-wrap: wrap;
@@ -31,8 +29,8 @@
     }
 
     &.ready {
-        min-height: auto;
         & > * {
+            transition: opacity 0.2s;
             opacity: 1;
         }
     }

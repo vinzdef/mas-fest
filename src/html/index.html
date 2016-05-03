@@ -14,15 +14,22 @@
 <body>
     <div id="Background"></div>
 
-    <nav id="Header">
+    <nav id="Menu">
+        <div class="Menu_Toggle">
+            <div class="Hamburger">
+                <span class="Hamburger_Top"></span>
+                <span class="Hamburger_Mid"></span>
+                <span class="Hamburger_Bottom"></span>
+            </div>
+        </div>
         <ul>
-            <li><a class="Header_Link internal" href="#">Home</a></li>
-            <li><a class="Header_Link internal" href="#">Programma</a></li>
-            <li><a class="Header_Link internal" href="#">About</a></li>
+            <li><a class="Menu_Link internal" href="/">Home</a></li>
+            <li><a class="Menu_Link internal" href="/schedule">Programma</a></li>
+            <li><a class="Menu_Link internal" href="/about">About</a></li>
         </ul>
     </nav>
 
-    <section id="Home" data-route="/home">
+    <section id="Home" data-route="/">
         <h1 class="IntroLogo">
             <span class="fat">MAS</span>
         </h1>
@@ -30,17 +37,19 @@
 
 
     <section id="Schedule" data-route="/schedule">
-        <div class="DaySelect">
+        <a class="DaySelect internal" href="/schedule">
             <label class="DaySelect_Label" for="DaySelect" name="DaySelect">Giorno:
                 <select id="DaySelect" class="DaySelect_Input">
                 </select>
             </label>
-        </div>
+        </a>
 
         <div class="Artist_Wrapper">
             <div class="Artist Template">
-                <img class="Artist_Photo" src="https://unsplash.it/200/300" alt="">
-                <h3 class="Artist_Name"></h3><p class="Artist_Hour"></p>
+                <div class="Artist_Header">
+                    <h3 class="Artist_Name"></h3><p class="Artist_Hour"></p>
+                </div>
+                <div class="Artist_Photo"></div>
                 <p class="Artist_Bio"></p>
             </div>
         </div>

@@ -2,10 +2,11 @@
 
 @import "design/base";
 @import "design/palette";
+@import "design/breakpoints";
 @import "design/mixins";
 
 @import "elements/sections";
-@import "elements/header";
+@import "elements/menu";
 @import "elements/intro-logo";
 @import "elements/background";
 @import "elements/artist";
@@ -13,3 +14,4 @@
 
 @import "sections/home";
 @import "sections/schedule";
+@import "sections/about";

@@ -1,9 +1,11 @@
 .DaySelect {
    display: inline-block;
-   margin: 2rem 2rem 0 3rem;
+   //padding: 2rem 2rem 2rem 3rem;
+   padding: 1.4rem 1rem 1rem 2rem;
    border-radius: 3px;
    font-size: 1.2rem;
    position: relative;
+   width: 100%;
 
    &_Input {
       -webkit-appearance: none;
@@ -30,5 +32,9 @@
          border: 0.3em solid transparent;
          border-top-color: currentColor;
       }
+   }
+
+   @media(max-width: $screen-small) {
+      padding: 1rem 1.5rem;
    }
 }

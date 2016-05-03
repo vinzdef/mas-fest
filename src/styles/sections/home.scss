@@ -1,8 +1,17 @@
 #Home {
     .IntroLogo {
         @include center-absolute;
+        top: 45%;
+        position: fixed;
         width: auto;
     }
 
-    min-height: calc(100% - 5.5rem);
+    min-height: calc(100% - 4rem);
+
+    @media(max-width: $screen-small) {
+        min-height: calc(100% - 3.5rem);
+        .IntroLogo {
+            top: 48%;
+        }
+    }
 }

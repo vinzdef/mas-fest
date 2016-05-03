@@ -1,0 +1,64 @@
+#Menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    @include elevation(2);
+    padding-left: 3rem;
+    z-index: 100;
+
+    transform: translateX(calc(100% - 3rem));
+    transition: transform 0.2s 0.4s;
+    &.open {
+        transition: transform 0.2s;
+        transform: translateX(0);
+    }
+
+    background: $c-accent;
+
+    ul {
+        padding: 1rem;
+        list-style: none;
+
+        li {
+            padding: 0 1rem;
+            display: inline-block;
+        }
+    }
+
+    .Menu_Toggle {
+        height: 100%;
+        position: absolute;
+        top: 0; bottom: 0;
+        width: 3rem;
+        content: '';
+        background-color: $c-accent;
+        transform: translateX(-100%);
+    }
+
+    .Menu_Link {
+        $link-color: rgba($c-dark, 0.7);
+        text-decoration: none;
+        color: $link-color;
+        font-weight: bold;
+        transition: color 0.2s;
+
+        &.active {
+            color: $c-dark;
+        }
+    }
+
+    @media (max-width: $screen-small) {
+        width: 100%;
+        ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+
+            li {
+                flex: 1 0;
+                text-align: center;
+            }
+        }
+    }
+}

@@ -16,11 +16,10 @@ export default class Schedule {
 	}
 
 	changeDate() {
-		const date = new Date(this.normalizeDate(this.select.val()))
+		const date = new Date(this.select.val())
 		const currentArtists = this.artists.filter(a => {
 			return a.date.toDateString() == date.toDateString()
 		})
-		console.log('[SCHEDULE] Current artists', currentArtists)
 
 		this.artistWrapper.empty()
 		currentArtists.forEach(a => {
@@ -49,7 +48,7 @@ export default class Schedule {
 				name: a.name,
 				bio: a.bio,
 				url: a.url,
-				image: a.image,
+				image: a.image || 'http://loremflickr.com/320/240',
 				date: new Date(this.normalizeDate(a.date)),
 				time: a.time
 			})
@@ -58,9 +57,9 @@ export default class Schedule {
 		this.artists.forEach(a => {
 			const template = this.template.clone()
 			template.find('.Artist_Name').text(a.name)
-			template.find('.Artist_Bio').text(a.name)
 			template.find('.Artist_Hour').text(a.time)
 			template.find('.Artist_Bio').text(a.bio)
+			template.find('.Artist_Photo').css('background-image', `url(${a.image})`)
 			a.template = template
 		})
 	}
