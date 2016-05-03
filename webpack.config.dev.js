@@ -1,5 +1,5 @@
 var autoprefixer = require('autoprefixer')
-var HtmlWebpackPlugin = require('html-webpack-plugin')
+var HtmlPlugin = require('html-webpack-plugin')
 
 module.exports = {
 	entry: './src/main.js',
@@ -35,7 +35,7 @@ module.exports = {
 	},
 
 	plugins: [
-		new HtmlWebpackPlugin({
+		new HtmlPlugin({
 			filename: 'index.html',
 			template: './src/html/index.html',
 			inject: true
