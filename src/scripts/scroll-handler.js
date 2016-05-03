@@ -2,16 +2,19 @@ import $ from 'jquery'
 
 export default class ScrollHandler {
 	constructor() {
-		this.onScroll = this.onScroll.bind(this)
 		this.beacons = $('[data-route]')
-		$(window).on('mousewheel', this.onScroll)
+		$(window).on('scroll', this.onScroll.bind(this))
 	}
 
 	onScroll(e) {
+		if (window.isFakeScroll) {
+			return
+		}
+
 		const bodyTop = $('body').scrollTop()
 		let target = null
 
-		this.beacons.each(function () {
+		this.beacons.each(function() {
 			const top = $(this).offset().top
 			const bottom = $(this).offset().top + $(this).height()
 

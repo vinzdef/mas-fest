@@ -26,19 +26,25 @@ export default class Router {
 	}
 
 	onStateChange(state) {
-		if (state.action == 'REPLACE' || state.pathname == this.prevPath) {
-			this.prevPath = state.pathname
+		if (this.prevPath == state.pathname) {
 			return
 		}
 
-
+		this.prevPath = state.pathname
 		$(window).trigger('MAS:state-change', { pathname: state.pathname })
+
+		if (state.action == 'REPLACE') {
+			return
+		}
 
 		Array.prototype.forEach.call(this.beacons, b => {
 			if (this.testPath(state.pathname, b.dataset['route'])) {
+				window.isFakeScroll = true
 				$('html, body').animate({
 					scrollTop: $(b).offset().top
-				}, 300)
+				}, 300, () => {
+					window.isFakeScroll = false
+				})
 			}
 		})
 	}
