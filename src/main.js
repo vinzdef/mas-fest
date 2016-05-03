@@ -4,5 +4,6 @@ import $ from 'jquery'
 import Application from './scripts/application'
 
 $(function() {
-	window.MASFest = new Application()
+	window.MAS = new Application()
+	window.$ = $
 })

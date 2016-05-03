@@ -22,21 +22,19 @@
         </ul>
     </nav>
 
-    <section id="Home">
+    <section id="Home" data-route="/home">
         <h1 class="IntroLogo">
             <span class="fat">MAS</span>
-            <span class="hand">fest</span>
         </h1>
     </section>
 
 
-    <section id="Schedule">
+    <section id="Schedule" data-route="/schedule">
         <div class="DaySelect">
-            <h4>
-                Giorno:
-            </h4>
-            <select class="DaySelect_Input">
-            </select>
+            <label class="DaySelect_Label" for="DaySelect" name="DaySelect">Giorno:
+                <select id="DaySelect" class="DaySelect_Input">
+                </select>
+            </label>
         </div>
 
         <div class="Artist_Wrapper">
@@ -50,7 +48,7 @@
     </section>
 
 
-    <section id="About"></section>
+    <section id="About" data-route="/about"></section>
 
 </body>
 </html>

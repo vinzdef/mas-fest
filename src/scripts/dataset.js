@@ -2,14 +2,11 @@ import $ from 'jquery'
 import Tabletop from 'tabletop'
 
 export default class Dataset {
-	constructor() {
-		this.onDataReceived = this.onDataReceived.bind(this)
-	}
 
 	fetch(spritesheet) {
 		Tabletop.init({
 			key: spritesheet,
-			callback: this.onDataReceived,
+			callback: (data) => this.onDataReceived(data),
 			simpleSheet: false
 		})
 	}

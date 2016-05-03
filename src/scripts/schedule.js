@@ -16,9 +16,9 @@ export default class Schedule {
 	}
 
 	changeDate() {
-		let date = new Date(this.select.val())
-		let currentArtists = this.artists.filter(a => {
-			return a.date.toLocaleDateString() == date.toLocaleDateString()
+		const date = new Date(this.normalizeDate(this.select.val()))
+		const currentArtists = this.artists.filter(a => {
+			return a.date.toDateString() == date.toDateString()
 		})
 		console.log('[SCHEDULE] Current artists', currentArtists)
 
@@ -29,7 +29,7 @@ export default class Schedule {
 	}
 
 	onDataReceived(data) {
-		this.data = data.elements
+		this.data = data
 		this.stopLoading()
 		this.buildModels()
 		this.fillDates()
@@ -56,7 +56,7 @@ export default class Schedule {
 		})
 
 		this.artists.forEach(a => {
-			let template = this.template.clone()
+			const template = this.template.clone()
 			template.find('.Artist_Name').text(a.name)
 			template.find('.Artist_Bio').text(a.name)
 			template.find('.Artist_Hour').text(a.time)
@@ -66,7 +66,7 @@ export default class Schedule {
 	}
 
 	fillDates() {
-		var dates = []
+		let dates = []
 		this.data.forEach(a => {
 			if (dates.indexOf(a.date) < 0) {
 				dates.push(a.date)
@@ -74,8 +74,12 @@ export default class Schedule {
 		})
 
 		dates.forEach(date => {
-			let d = new Date(this.normalizeDate(date))
-			this.select.append(`<option value="${d.toLocaleDateString()}">${d.getDate()} ${this.getMonth(d.getMonth())}</option>`)
+			const d = new Date(this.normalizeDate(date))
+			this.select.append(
+				`<option
+					value="${d.toLocaleDateString()}">
+					${d.getDate()}
+					${this.getMonth(d.getMonth())}</option>`)
 		})
 	}
 

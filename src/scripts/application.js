@@ -19,6 +19,6 @@ export default class Application {
 	}
 
 	onDataReceived(e, data) {
-		this.schedule.onDataReceived(data['Artisti'])
+		this.schedule.onDataReceived(data['Artisti'].elements)
 	}
 }

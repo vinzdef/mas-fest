@@ -10,7 +10,7 @@ export default class ScrollHandler {
 		if ($(window).scrollTop() == 0 && e.originalEvent.deltaY > 0) {
 			$('html, body').animate({
 				scrollTop: $('#Schedule').offset().top
-			}, 800)
+			}, 350)
 			return false
 		}
 	}
