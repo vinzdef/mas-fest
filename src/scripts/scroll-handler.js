@@ -14,12 +14,12 @@ export default class ScrollHandler {
 		const bodyTop = $('body').scrollTop()
 		let target = null
 
-		this.beacons.each(function() {
-			const top = $(this).offset().top
-			const bottom = $(this).offset().top + $(this).height()
+		this.beacons.each((i, el) => {
+			const top = $(el).offset().top
+			const bottom = $(el).offset().top + $(el).height()
 
-			if (top <= bodyTop)  {
-				target = this
+			if (top <= bodyTop) {
+				target = el
 			}
 		})
 

@@ -15,9 +15,9 @@ export default class Menu {
 		this.menu
 			.find('.Menu_Link')
 			.removeClass('active')
-			.each(function() {
-				if (this.pathname == pathname) {
-					$(this).addClass('active')
+			.each((i, el) => {
+				if (el.pathname == pathname) {
+					$(el).addClass('active')
 				}
 			})
 

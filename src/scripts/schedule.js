@@ -7,20 +7,22 @@ export default class Schedule {
 
 		this.select = $('#Schedule .DaySelect_Input')
 
-		this.changeDate = this.changeDate.bind(this)
+		this.reorder = this.reorder.bind(this)
 		this.doBindings()
 	}
 
 	doBindings() {
-		this.select.change(this.changeDate)
+		this.select.change(this.reorder)
 	}
 
-	changeDate() {
-		const date = new Date(this.select.val())
+	reorder() {
+		const targetDate = new Date(this.select.val())
 		const currentArtists = this.artists.filter(a => {
-			return a.date.toDateString() == date.toDateString()
+			let artistDate = new Date(a.date)
+			return artistDate.toDateString() == targetDate.toDateString()
 		})
 
+	//	TODO: Animate transition!
 		this.artistWrapper.empty()
 		currentArtists.forEach(a => {
 			this.artistWrapper.append(a.template)
@@ -28,22 +30,22 @@ export default class Schedule {
 	}
 
 	onDataReceived(data) {
-		this.data = data
+		this.buildModels(data)
+		this.fillSelect()
+		this.reorder()
+
 		this.stopLoading()
-		this.buildModels()
-		this.fillDates()
-		this.changeDate()
 	}
 
 	stopLoading() {
+	//	TODO: Loading animation
 		$('#Schedule').addClass('ready')
 	}
 
-	buildModels() {
-		this.artists = []
+	buildModels(data) {
 		this.artists = []
 
-		this.data.forEach(a => {
+		data.forEach(a => {
 			this.artists.push({
 				name: a.name,
 				bio: a.bio,
@@ -64,9 +66,9 @@ export default class Schedule {
 		})
 	}
 
-	fillDates() {
+	fillSelect() {
 		let dates = []
-		this.data.forEach(a => {
+		this.artists.forEach(a => {
 			if (dates.indexOf(a.date) < 0) {
 				dates.push(a.date)
 			}
@@ -84,14 +86,14 @@ export default class Schedule {
 
 	normalizeDate(d) {
 		let normalizedDate = d.split('/')
-		let day = normalizedDate[0]
+		const day = normalizedDate[0]
 		normalizedDate[0] = normalizedDate[1]
 		normalizedDate[1] = day
 		return normalizedDate.join('/')
 	}
 
 	getMonth(num) {
-		let months = ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre']
+		const months = ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre']
 		return months[num]
 	}
 }
