@@ -33,6 +33,11 @@
         content: '';
         background-color: $c-accent;
         transform: translateX(-100%);
+
+        .Hamburger {
+            @include center-absolute;
+            width: 3rem;
+        }
     }
 
     .Menu_Link {
