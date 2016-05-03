@@ -51,7 +51,7 @@ export default class Schedule {
 				bio: a.bio,
 				url: a.url,
 				image: a.image || 'http://loremflickr.com/320/240',
-				date: new Date(this.normalizeDate(a.date)),
+				date: this.normalizeDate(a.date),
 				time: a.time
 			})
 		})
@@ -75,10 +75,10 @@ export default class Schedule {
 		})
 
 		dates.forEach(date => {
-			const d = new Date(this.normalizeDate(date))
+			const d = new Date(date)
 			this.select.append(
 				`<option
-					value="${d.toLocaleDateString()}">
+					value="${d.toString()}">
 					${d.getDate()}
 					${this.getMonth(d.getMonth())}</option>`)
 		})
