@@ -37,14 +37,32 @@ export default class Router {
 			return
 		}
 
-		Array.prototype.forEach.call(this.beacons, b => {
-			if (this.testPath(state.pathname, b.dataset['route'])) {
-				window.isFakeScroll = true
-				$('html, body').animate({
-					scrollTop: $(b).offset().top
-				}, 300, () => {
-					window.isFakeScroll = false
-				})
+		if (state.pathname.indexOf('artist') >= 0) {
+			const slug = state.pathname.match(/artist\/(.*)$/)[1]
+			$(window).trigger('MAS:popup-open', { slug })
+			this.artistPopupOpen = true
+		} else {
+			if (this.artistPopupOpen) {
+				$(window).trigger('MAS:popup-close')
+				this.artistPopupOpen = false
+			}
+
+			Array.prototype.forEach.call(this.beacons, b => {
+				if (this.testPath(state.pathname, b.dataset['route'])) {
+					this.scrollTo(b)
+				}
+			})
+		}
+	}
+
+	scrollTo(section, callback) {
+		window.isFakeScroll = true
+		$('html, body').animate({
+			scrollTop: $(section).offset().top
+		}, 300, () => {
+			window.isFakeScroll = false
+			if (callback) {
+				callback()
 			}
 		})
 	}

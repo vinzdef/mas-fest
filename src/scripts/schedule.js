@@ -29,9 +29,10 @@ export default class Schedule {
 		})
 	}
 
-	onDataReceived(data) {
-		this.buildModels(data)
-		this.fillSelect()
+	onDataReceived(artists) {
+		this.artists = artists
+		this.buildModels(artists)
+		this.fillSelect(artists)
 		this.reorder()
 
 		this.stopLoading()
@@ -42,33 +43,21 @@ export default class Schedule {
 		$('#Schedule').addClass('ready')
 	}
 
-	buildModels(data) {
-		this.artists = []
-
-		data.forEach(a => {
-			this.artists.push({
-				name: a.name,
-				bio: a.bio,
-				url: a.url,
-				image: a.image || 'http://loremflickr.com/320/240',
-				date: this.normalizeDate(a.date),
-				time: a.time
-			})
-		})
-
-		this.artists.forEach(a => {
+	buildModels(artists) {
+		artists.forEach(a => {
 			const template = this.template.clone()
 			template.find('.Artist_Name').text(a.name)
 			template.find('.Artist_Hour').text(a.time)
 			template.find('.Artist_Bio').text(a.bio)
 			template.find('.Artist_Photo').css('background-image', `url(${a.image})`)
+			template.attr('href', `artist/${a.slug}`)
 			a.template = template
 		})
 	}
 
-	fillSelect() {
+	fillSelect(artists) {
 		let dates = []
-		this.artists.forEach(a => {
+		artists.forEach(a => {
 			if (dates.indexOf(a.date) < 0) {
 				dates.push(a.date)
 			}
@@ -82,14 +71,6 @@ export default class Schedule {
 					${d.getDate()}
 					${this.getMonth(d.getMonth())}</option>`)
 		})
-	}
-
-	normalizeDate(d) {
-		let normalizedDate = d.split('/')
-		const day = normalizedDate[0]
-		normalizedDate[0] = normalizedDate[1]
-		normalizedDate[1] = day
-		return normalizedDate.join('/')
 	}
 
 	getMonth(num) {

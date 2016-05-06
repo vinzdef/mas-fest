@@ -6,7 +6,7 @@
         width: auto;
     }
 
-    min-height: calc(100% - 4rem);
+    min-height: calc(100% - 4.5rem);
 
     @media(max-width: $screen-small) {
         min-height: calc(100% - 3.5rem);

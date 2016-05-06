@@ -2,18 +2,21 @@
     position: fixed;
     top: 0;
     right: 0;
-    @include elevation(2);
-    padding-left: 3rem;
     z-index: 100;
 
-    transform: translateX(calc(100% - 3rem));
-    transition: transform 0.2s 0.4s;
-    &.open {
-        transition: transform 0.2s;
-        transform: translateX(0);
-    }
+    // transform: translateX(calc(100% - 3rem));
+    // transition: transform 0.2s 0.4s;
+    // &.open {
+    //     transition: transform 0.2s;
+    //     transform: translateX(0);
+    // }
 
-    background: $c-accent;
+    //@include elevation(2);
+    //background: $c-accent;
+
+    @media (max-width: 800px) {
+        display: none;
+    }
 
     ul {
         padding: 1rem;
