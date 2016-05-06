@@ -2,17 +2,7 @@
     position: fixed;
     top: 0;
     right: 0;
-    z-index: 100;
-
-    // transform: translateX(calc(100% - 3rem));
-    // transition: transform 0.2s 0.4s;
-    // &.open {
-    //     transition: transform 0.2s;
-    //     transform: translateX(0);
-    // }
-
-    //@include elevation(2);
-    //background: $c-accent;
+    z-index: 1;
 
     @media (max-width: 800px) {
         display: none;
@@ -44,14 +34,17 @@
     }
 
     .Menu_Link {
-        $link-color: rgba($c-dark, 0.7);
+        $link-color: rgba($c-gray, 0.7);
         text-decoration: none;
         color: $link-color;
         font-weight: bold;
         transition: color 0.2s;
 
+        text-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+
         &.active {
-            color: $c-dark;
+            color: darken($link-color, 10);
+            color: #fafafa;
         }
     }
 
