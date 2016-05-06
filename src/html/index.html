@@ -12,44 +12,44 @@
     </style>
 </head>
 <body>
-    <div id="Background"></div>
+    <div id="Root">
+        <nav id="Menu">
+            <ul>
+                <li><a class="Menu_Link internal" href="/">Home</a></li>
+                <li><a class="Menu_Link internal" href="/schedule">Programma</a></li>
+                <li><a class="Menu_Link internal" href="/about">About</a></li>
+            </ul>
+        </nav>
 
-    <nav id="Menu">
-        <ul>
-            <li><a class="Menu_Link internal" href="/">Home</a></li>
-            <li><a class="Menu_Link internal" href="/schedule">Programma</a></li>
-            <li><a class="Menu_Link internal" href="/about">About</a></li>
-        </ul>
-    </nav>
-
-    <section id="Home" data-route="/">
-        <h1 class="IntroLogo">
-            <span class="fat">MAS</span>
-        </h1>
-    </section>
+        <section id="Home" data-route="/">
+            <h1 class="IntroLogo">
+                <span class="fat">MAS</span>
+            </h1>
+        </section>
 
 
-    <section id="Schedule" data-route="/schedule">
-        <a class="DaySelect internal" href="/schedule">
-            <label class="DaySelect_Label" for="DaySelect" name="DaySelect">Giorno:
-                <select id="DaySelect" class="DaySelect_Input">
-                </select>
-            </label>
-        </a>
-
-        <div class="Artist_Wrapper">
-            <a class="Artist Template internal">
-                <div class="Artist_Header">
-                    <h3 class="Artist_Name"></h3><p class="Artist_Hour"></p>
-                </div>
-                <div class="Artist_Photo"></div>
-                <p class="Artist_Bio"></p>
+        <section id="Schedule" data-route="/schedule">
+            <a class="DaySelect internal" href="/schedule">
+                <label class="DaySelect_Label" for="DaySelect" name="DaySelect">Giorno:
+                    <select id="DaySelect" class="DaySelect_Input">
+                    </select>
+                </label>
             </a>
-        </div>
-    </section>
+
+            <div class="Artist_Wrapper">
+                <a class="Artist Template internal">
+                    <div class="Artist_Header">
+                        <h3 class="Artist_Name"></h3><p class="Artist_Hour"></p>
+                    </div>
+                    <div class="Artist_Photo"></div>
+                    <p class="Artist_Bio"></p>
+                </a>
+            </div>
+        </section>
 
 
-    <section id="About" data-route="/about"></section>
+        <section id="About" data-route="/about"></section>
+    </div>
 
 
     <div id="ArtistPopup">

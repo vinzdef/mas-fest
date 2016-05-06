@@ -41,6 +41,7 @@ export default class Application {
 			//this.artistPopup.loading()
 			return
 		}
+
 		const artist = this.dataset.artists.filter(a => a.slug == slug)[0]
 		this.artistPopup.fill(artist)
 		this.artistPopup.open()
