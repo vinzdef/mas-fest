@@ -3,8 +3,10 @@ import $ from 'jquery'
 export default class ArtistPopup {
 	constructor() {
 		this.element = $('#ArtistPopup')
-		this.element.click(() => {
-			$(window).trigger('MAS:push-state', { pathname: '/scheudle' })
+		this.element.click(({ target }) => {
+			if (this.element.is(target)) {
+				$(window).trigger('MAS:push-state', { pathname: '/scheudle' })
+			}
 		})
 	}
 

@@ -44,13 +44,21 @@ export default class Application {
 		const artist = this.dataset.artists.filter(a => a.slug == slug)[0]
 		this.artistPopup.fill(artist)
 		this.artistPopup.open()
+		this.lockScroll()
 	}
 
 	closePopup() {
 		this.artistPopup.close()
+		this.unlockScroll()
 	}
 
-	lockScroll() {
-		$('html,body').css('overflow', 'hidden')
+	lockScroll(e) {
+		const currentScroll = window.scrollY
+		$('html').addClass('scroll-lock')
+		window.scrollTo(0, currentScroll)
+	}
+
+	unlockScroll(e) {
+		$('html').removeClass('scroll-lock')
 	}
 }
