@@ -19,6 +19,10 @@
         width: 100%;
         display: flex;
         flex-wrap: wrap;
+
+        @media (max-width: 800px) {
+            padding: 0 0.3rem 2rem;
+        }
     }
 
     .Artist {
@@ -44,4 +48,5 @@
             opacity: 1;
         }
     }
+
 }
