@@ -3,6 +3,7 @@
     top: 0;
     right: 0;
     z-index: 1;
+    font-family: $f-bold;
 
     @media (max-width: 800px) {
         display: none;

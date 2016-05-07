@@ -24,6 +24,7 @@
       color: currentColor;
       display: inline-block;
       position: relative;
+      font-family: $f-bold;
 
       &:after {
          content: '';

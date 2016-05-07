@@ -22,6 +22,26 @@ h1, h2, h3, h4, h5 {
     display: none;
 }
 
-.scroll-lock {
+$f-light: 'Avenir LT Std 35 Light';
+$f-regular: 'Avenir LT Std 65 Medium';
+$f-bold: 'Avenir LT Std 85 Heavy';
+$f-black: 'Avenir LT Std 95 Black';
+
+html.scroll-lock {
     overflow: hidden;
+}
+
+html {
+    overflow-x: hidden;
+    font-family: 'Avenir LT Std 65 Medium';
+}
+
+::selection {
+    background: rgba(#fff, 0.2);
+    color: inherit;
+
+}
+
+#ArtistPopup .Inner ::selection {
+    background: rgba(#000, 0.2);
 }
