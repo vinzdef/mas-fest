@@ -1,4 +1,6 @@
 @import "~normalize.css/normalize";
+@import "../assets/fonts/style.css";
+
 
 @import "design/palette";
 @import "design/base";
@@ -17,3 +19,4 @@
 @import "sections/home";
 @import "sections/schedule";
 @import "sections/about";
+@import "sections/footer";
