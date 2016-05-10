@@ -1,18 +1,19 @@
 .Artist {
     padding: 1rem;
-    padding-bottom: 20%;
-    margin: 1rem;
     position: relative;
-    min-height: 10rem;
 
-    @include elevation(1);
-    transform: translateZ(0.0001px);
-    transition: box-shadow 0.2s, transform 0.2s;
-    cursor: pointer; cursor: hand;
+    &_Inner {
+        position: relative;
+        min-height: 15rem;
+        @include elevation(1);
+        transform: translateZ(0.0001px);
+        cursor: pointer; cursor: hand;
 
-    &:hover {
-        @include elevation(2);
-        transform: scale(1.05, 1.05), translateZ(0.0001px);
+        transition: box-shadow 0.2s, transform 0.4s;
+        &:hover {
+            @include elevation(2);
+            transform: scale(1.1, 1.1), translateZ(0.0001px);
+        }
     }
 
     border-radius: 2px;
@@ -44,17 +45,13 @@
     }
 
     &_Name {
-        font-family: $f-bold;
-    }
-
-    &_Hour {
-        font-family: $f-black;
+        font-weight: bold;
     }
 
     &_Hour {
         color: currentColor;
         opacity: 0.7;
-        font-weight: bold;
+        font-weight: bolder;
 
         &:before {
             content: '-';

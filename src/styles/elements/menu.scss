@@ -1,9 +1,11 @@
 #Menu {
     position: fixed;
     top: 0;
-    right: 0;
+    left: 100vw;
+    transform: translateX(-100%);
+    width: 20rem;
     z-index: 1;
-    font-family: $f-bold;
+    font-weight: bold;
 
     @media (max-width: 800px) {
         display: none;

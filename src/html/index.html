@@ -12,49 +12,40 @@
     </style>
 </head>
 <body>
-    <div id="Root">
-        <nav id="Menu">
-            <ul>
-                <li><a class="Menu_Link internal" href="/">Home</a></li>
-                <li><a class="Menu_Link internal" href="/schedule">Programma</a></li>
-                <li><a class="Menu_Link internal" href="/about">About</a></li>
-            </ul>
-        </nav>
+    <nav id="Menu">
+        <ul>
+            <li><a class="Menu_Link internal" href="/">Home</a></li>
+            <li><a class="Menu_Link internal" href="/schedule">Programma</a></li>
+            <li><a class="Menu_Link internal" href="/about">About</a></li>
+        </ul>
+    </nav>
 
+    <div id="Root">
         <section id="Home" data-route="/">
             <h1 class="IntroLogo">
                 <span class="fat">MAS</span>
             </h1>
         </section>
 
-
         <section id="Schedule" data-route="/schedule">
             <a class="DaySelect internal" href="/schedule">
-                <label class="DaySelect_Label" for="DaySelect" name="DaySelect">Giorno:
-                    <select id="DaySelect" class="DaySelect_Input">
+                <label class="DaySelect_Label" for="DaySelect">Giorno:
+                    <select id="DaySelect" name="DaySelect" class="DaySelect_Input">
                     </select>
                 </label>
             </a>
 
             <div class="Artist_Wrapper">
-                <a class="Artist Template internal">
-                    <div class="Artist_Header">
-                        <h3 class="Artist_Name"></h3><p class="Artist_Hour"></p>
-                    </div>
-                    <div class="Artist_Photo"></div>
-                    <p class="Artist_Bio"></p>
-                </a>
             </div>
         </section>
 
-
         <section id="About" data-route="/about"></section>
         <section id="Footer">
-            <div class="Socials">
-                <a href="facebook.com">f</a>
+            <div class="Socials Column">
+                <a href="//facebook.com">f</a>
             </div>
 
-            <div class="Partners">
+            <div class="Partners Column">
                 <ul>
                     <li><a href="">P1</a></li>
                     <li><a href="">P1</a></li>
@@ -64,10 +55,11 @@
                 </ul>
             </div>
 
-            <div class="MadeBy">Made with &lt;3 by <a href="twitter.com/ghzmdr" class="ghzmdr">ghzmdr</a></div>
+            <div class="MadeBy">with &lt;3 by <a href="//twitter.com/ghzmdr" class="ghzmdr">ghzmdr</a></div>
 
         </section>
     </div>
+
 
 
     <div id="ArtistPopup">
@@ -81,6 +73,20 @@
                 <div class="Schedule"></div>
             </div>
         </div>
+    </div>
+
+    <a class="Artist Template internal">
+        <div class="Artist_Inner">
+            <div class="Artist_Header">
+                <h3 class="Artist_Name"></h3><p class="Artist_Hour"></p>
+            </div>
+            <div class="Artist_Photo"></div>
+            <p class="Artist_Bio"></p>
+        </div>
+    </a>
+
+    <div id="Loader">
+        <img src="../assets/images/loading.gif" class="gif">
     </div>
 </body>
 </html>

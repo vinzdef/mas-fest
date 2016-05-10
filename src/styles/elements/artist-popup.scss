@@ -5,6 +5,7 @@
     left: 0;
     height: 100%;
     width: 100%;
+    width: 100vw;
     padding: 2rem 0;
     z-index: 1;
     background-color: rgba(#2b2b2b, 0.3);
@@ -17,7 +18,7 @@
         @include elevation(2);
         max-width: 800px;
         width: 80%;
-        height: 80%;
+        height: 90%;
 
         background-color: #fff;
         border-radius: 5px 5px 4px 4px;
@@ -57,7 +58,7 @@
 
     .Name {
         margin-top: 1rem;
-        font-family: $f-black;
+        font-weight: bolder;
         margin-bottom: 2rem;
     }
 
@@ -77,16 +78,15 @@
 
     &.open &_Content {
         transform: scale(1,1);
-        transition: transform 0.4s, opacity 0.4s;
         opacity: 1;
     }
 
     background-color: rgba(0,0,0,0);
-    transition: background-color 0.4s 0.4s, transform 0s 0.7s;
+    transition: background-color 0.4s, transform 0s 0.7s;
     transform: scale(0, 0);
 
     &.open {
-        transition: background-color 0.4s 0.4s, transform 0s;
+        transition: background-color 0.4s;
         background-color: rgba(0,0,0,0.3);
         transform: scale(1,1);
     }
