@@ -1,7 +1,6 @@
 @import "~normalize.css/normalize";
 @import "../assets/fonts/style.css";
 
-
 @import "design/palette";
 @import "design/base";
 @import "design/breakpoints";
@@ -15,6 +14,7 @@
 @import "elements/day-select";
 @import "elements/artist-popup";
 @import "elements/menu-toggle";
+@import "elements/loader";
 
 @import "sections/home";
 @import "sections/schedule";

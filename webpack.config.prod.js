@@ -26,8 +26,9 @@ module.exports = {
 				test: /\.scss$/,
 				loader: ExtractTextPlugin.extract('style-loader', 'css-loader?sourceMap!postcss-loader?sourceMap!sass-loader?sourceMap')
 			},
-			{ test: /\.(svg|jpg|png)$/, loader: 'url'},
-			{ test: /\.json$/, loader: 'json' }
+			{ test: /\.(svg|jpg|png|gif|woff)$/, loader: 'url-loader?limit=10000'},
+			{ test: /\.json$/, loader: 'json' },
+			{ test: /\.html$/, loader: 'html' }
 		]
 	},
 
