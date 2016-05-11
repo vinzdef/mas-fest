@@ -3,18 +3,18 @@ import Tabletop from 'tabletop'
 
 export default class Dataset {
 
-	fetch(spritesheet) {
+	fetch(spritesheet, callback) {
 		Tabletop.init({
 			key: spritesheet,
-			callback: (data) => this.onDataReceived(data),
+			callback: (data) => this.onDataReceived(data, callback),
 			simpleSheet: false
 		})
 	}
 
-	onDataReceived(data) {
+	onDataReceived(data, callback) {
 		this.data = data
 		this.artists = this.getArtists(data)
-		$(window).trigger('MAS:data-received', { artists: this.artists })
+		callback(this.artists)
 	}
 
 	getArtists(data) {
