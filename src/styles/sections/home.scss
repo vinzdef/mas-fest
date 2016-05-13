@@ -1,17 +1,67 @@
 #Home {
-    .IntroLogo {
-        @include center-absolute;
-        top: 52%;
-        position: fixed;
-        width: auto;
-    }
+    height: 100%;
+    height: 100vh;
 
-    min-height: calc(100% - 4.5rem);
+    .Text {
+        position: absolute;
+        z-index: 1;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
 
-    @media(max-width: $screen-small) {
-        min-height: calc(100% - 3.5rem);
-        .IntroLogo {
-            top: 48%;
+        text-align: center;
+
+        @media (max-width: 500px) {
+            width: 100%;
+
+            .Info {
+                font-size: 1.2rem;
+            }
         }
     }
+
+    .Name {
+        font-size: 5rem;
+        font-weight: bolder;
+        margin-bottom: 2rem;
+        color: $c-accent;
+        text-shadow: 0 2px 6px rgba(0,0,0,0.5);
+    }
+
+    .Info {
+        text-transform: lowercase;
+        font-family: monospace;
+        font-weight: bold;
+        font-size: 1.5rem;
+        > * {
+            margin-bottom: 0.5em;
+        }
+    }
+
+    .Place a {
+        font-size: 0.8em;
+        text-decoration: none;
+        color: currentColor;
+        position: relative;
+
+        &:hover {
+            &:after {
+                transform: rotate(0.3deg);
+            }
+        }
+
+        &:after {
+            content: '';
+            background-color: $c-dark;
+            position: absolute;
+            bottom: -5px;
+            left: -5px;
+            right: -5px;
+            height: 2px;
+
+            transform: rotate(-0.3deg);
+            transition: transform 0.2s;
+        }
+    }
+
 }

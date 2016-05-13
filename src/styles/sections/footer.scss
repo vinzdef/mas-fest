@@ -1,30 +1,50 @@
 #Footer {
     display: flex;
-    width: 100%;
-    background-color: $c-dark;
+    width: auto;
+    padding: 0 1.3rem;
+
+    height: 1rem;
+    position: absolute;
+    z-index: 2;
+    bottom: 1rem;
+
+    justify-content: flex-start;
+    align-items: flex-start;
+    text-align: left;
+
     min-height: auto;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+
     .Column {
         flex: 1 0;
     }
 
-    .MadeBy {
-        position: absolute;
-        font-size: 0.5rem;
-        right: 0.5rem;
-        bottom: 0.3rem;
-        color: rgba(white, 0.2);
+    a {
+        text-decoration: none;
+        color: white;
+        line-height: 1.25rem;
+        display: inline-block;
+        vertical-align: middle;
+    }
 
-        .ghzmdr {
-            text-decoration: none;
-            color: rgba(red, 0.5);
-            font-family: monospace;
-            &:hover {
-                color: green;
-            }
+    &:after {
+        z-index: -1;
+        position: absolute;
+        content: '';
+        left: -1rem;
+        right: 0;
+        top: -0.5rem;
+        bottom: -0.5rem;
+        background-color: $c-dark;
+
+        transform: skew(3deg) rotate(-1deg);
+    }
+
+    .Socials {
+        color: $c-accent;
+
+        a {
+            color: inherit;
+            font-weight: bold;
         }
     }
 }

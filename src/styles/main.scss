@@ -3,20 +3,9 @@
 
 @import "design/palette";
 @import "design/base";
-@import "design/breakpoints";
-@import "design/mixins";
 
 @import "elements/sections";
-@import "elements/menu";
-@import "elements/intro-logo";
-@import "elements/background";
-@import "elements/artist";
-@import "elements/day-select";
-@import "elements/artist-popup";
-@import "elements/menu-toggle";
-@import "elements/loader";
+@import "elements/avatar";
 
 @import "sections/home";
-@import "sections/schedule";
-@import "sections/about";
 @import "sections/footer";

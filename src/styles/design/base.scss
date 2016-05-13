@@ -4,6 +4,7 @@ body, html, #Root {
     position: relative;
     margin: 0;
     background-color: $c-bkg;
+    overflow: hidden;
 }
 
 #Root {

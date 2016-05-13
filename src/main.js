@@ -1,10 +1,7 @@
 import Styles from './styles/main'
-import $ from 'jquery'
 
 import Application from './scripts/application'
 
-
-$(function() {
+window.onload = function() {
 	window.MAS = new Application()
-	window.$ = $
-})
+}
