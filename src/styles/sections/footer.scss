@@ -3,7 +3,7 @@
     width: auto;
     padding: 0 1.3rem;
 
-    height: 1rem;
+    height: 2rem;
     position: absolute;
     z-index: 2;
     bottom: 1rem;
@@ -21,7 +21,7 @@
     a {
         text-decoration: none;
         color: white;
-        line-height: 1.25rem;
+        line-height: 2.25rem;
         display: inline-block;
         vertical-align: middle;
     }
@@ -36,13 +36,15 @@
         bottom: -0.5rem;
         background-color: $c-dark;
 
-        transform: skew(3deg) rotate(-1deg);
+        transform: rotate(-1deg);
     }
 
     .Socials {
-        color: $c-accent;
+        color: $c-bkg;
 
         a {
+            font-size: 1.2rem;
+            padding: 0 1rem;
             color: inherit;
             font-weight: bold;
         }
