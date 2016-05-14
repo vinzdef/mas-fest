@@ -1,6 +1,15 @@
 .Avatar {
     position: absolute;
     height: 100px;
+    width: 100px;
+    background-size: contain;
+    background-position: center center;
     top: 0;
     z-index: 0;
+
+    transition: background-image 0.2s;
+    background-image: url("../assets/images/avatar.png");
+    &.hover {
+        background-image: url("../assets/images/avatar-white.png")
+    }
 }
