@@ -9,6 +9,7 @@
 
     transition: background-image 0.2s;
     background-image: url("../assets/images/avatar.png");
+
     &.hover {
         background-image: url("../assets/images/avatar-white.png")
     }
