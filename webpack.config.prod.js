@@ -15,7 +15,7 @@ module.exports = {
 	module: {
 		loaders: [
 			{
-				test: /\.js?$/,
+				test: /\.js$/,
 				exclude: /(node_modules)/,
 				loader: 'babel',
 				query: {
@@ -52,6 +52,6 @@ module.exports = {
 	],
 
 	resolve: {
-		extensions: ['', '.js', '.js', '.json', '.scss']
+		extensions: ['', '.js', '.json', '.scss']
 	}
 }
