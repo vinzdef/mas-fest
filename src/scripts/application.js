@@ -15,8 +15,8 @@ export default class Application {
 	}
 
 	onMove(e) {
-		const x = typeof(e.clientX) === 'undefined' ? e.touches[0].screenX : e.clientX
-		const y = typeof(e.clientY) === 'undefined' ? e.touches[0].screenY : e.clientY
+		const x = typeof e.clientX === 'undefined' ? e.touches[0].screenX : e.clientX
+		const y = typeof e.clientY === 'undefined' ? e.touches[0].screenY : e.clientY
 
 		this.avatar.style.transform = `translate3d(calc(${x}px - 50px), calc(${y}px - 50px), 0.001px)`
 	}

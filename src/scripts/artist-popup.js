@@ -1,5 +1,7 @@
 import $ from 'jquery'
 
+import { lockScroll, unlockScroll } from './utils'
+
 export default class ArtistPopup {
 	constructor() {
 		this.element = $('#ArtistPopup')
@@ -8,14 +10,33 @@ export default class ArtistPopup {
 				$(window).trigger('MAS:push-state', { pathname: '/scheudle' })
 			}
 		})
+
+		$(window).on('MAS:popup-open', this.open.bind(this))
+		$(window).on('MAS:popup-close', this.close.bind(this))
 	}
 
-	open() {
+	open(e, { slug }) {
+		if (!this.dataReady) {
+			this.element.one('MAS:popup-data-ready', () => this.open(e, { slug }))
+			return
+		}
+
+		const artist = this.artists.filter(a => a.slug == slug)[0]
+		this.fill(artist)
+
+		lockScroll()
 		this.element.addClass('open')
 		this.isOpen = true
 	}
 
+	onDataReceived(artists) {
+		this.dataReady = true
+		this.artists = artists
+		this.element.trigger('MAS:popup-data-ready')
+	}
+
 	close() {
+		unlockScroll()
 		this.element.removeClass('open')
 		this.isOpen = false
 	}
