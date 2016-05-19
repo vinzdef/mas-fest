@@ -46,7 +46,7 @@
 
         &:hover {
             &:after {
-                transform: rotate(0.3deg) translateZ(1px);
+                transform: rotate(0.3deg);
             }
         }
 
@@ -59,7 +59,7 @@
             right: -5px;
             height: 2px;
 
-            transform: rotate(-0.3deg) translateZ(1px);
+            transform: rotate(-0.3deg);
             transition: transform 0.2s;
         }
     }
