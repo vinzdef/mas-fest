@@ -1,27 +1,28 @@
 module.exports = {
+
 	"parser": "babel-eslint",
+
     "env": {
         "browser": true,
         "commonjs": true,
         "es6": true
     },
+
     "parserOptions": {
+
         "ecmaFeatures": {
             "experimentalObjectRestSpread": true,
-            "jsx": true,
-            "classes": true,
+            "classes": true
         },
+
         "sourceType": "module"
     },
-    "plugins": [
-        "react"
-    ],
+
     "rules": {
         "indent": ["error", "tab"],
         "linebreak-style": ["error", "unix"],
         "quotes": ["error", "single", "avoid-escape"],
         "semi": [2, "never"],
-//		"comma-dangle": [1, "always-multiline"],
         "no-cond-assign": 2,
         "no-constant-condition": 1,
         "no-debugger": 2,
@@ -79,7 +80,6 @@ module.exports = {
         "no-underscore-dangle": 0,
         "no-unneeded-ternary": 2,
         "operator-linebreak": [2, "before"],
-        //"quote-props": [2, "as-needed"],
         "space-before-blocks": [2, "always"],
         "space-before-function-paren": [2, "never"],
         "space-in-parens": [2, "never"],
