@@ -5,4 +5,4 @@ export default function main() {
 	window.MAS = new Application()
 }
 
-window.onload = main
+window.addEventListener('load', main, false)
