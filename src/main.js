@@ -1,7 +1,8 @@
 import Styles from './styles/main'
-
 import Application from './scripts/application'
 
-window.onload = function() {
+export default function main() {
 	window.MAS = new Application()
 }
+
+window.onload = main
