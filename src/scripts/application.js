@@ -5,7 +5,6 @@ export default class Application {
 		window.addEventListener('touchmove', this.onMove.bind(this))
 
 		document.addEventListener('mouseover', e => {
-			console.log(e.path[0].tagName)
 			if (e.path[0].tagName == 'A') {
 				this.avatar.classList.add('hover')
 			} else {
