@@ -44,11 +44,6 @@
         color: currentColor;
         position: relative;
 
-        &:hover {
-            &:after {
-                transform: rotate(0.3deg) translateZ(1px);
-            }
-        }
 
         &:after {
             content: '';
@@ -58,8 +53,6 @@
             left: -5px;
             right: -5px;
             height: 2px;
-
-            transform: rotate(-0.3deg) translateZ(1px);
             transition: transform 0.2s;
         }
     }
