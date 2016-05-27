@@ -23,7 +23,7 @@ export default class Dataset {
 				name: a.name,
 				bio: a.bio,
 				url: a.url,
-				image: a.image || 'http://loremflickr.com/320/240',
+				image: a.image ? `https://docs.google.com/uc?id=${a.image}` : 'http://loremflickr.com/320/240',
 				date: this.normalizeDate(a.date),
 				time: a.time,
 				slug: a.slug
