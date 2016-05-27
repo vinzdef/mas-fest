@@ -1,0 +1,12 @@
+.Avatar {
+    animation-name: ChangeBg;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes ChangeBg {
+    0% {background-color: $c-bkg}
+    33% {background-color: white}
+    67% {background-color: #ae723c}
+    100% {background-color: $c-bkg}
+}
