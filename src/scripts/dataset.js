@@ -19,16 +19,24 @@ export default class Dataset {
 
 	getArtists(data) {
 		return data['Artisti'].elements.map(a => {
+			const image = `https://docs.google.com/uc?id=${a.image}`
+			this.initImage(image)
+
 			return {
 				name: a.name,
 				bio: a.bio,
 				url: a.url,
-				image: a.image ? `https://docs.google.com/uc?id=${a.image}` : 'http://loremflickr.com/320/240',
+				image,
 				date: this.normalizeDate(a.date),
 				time: a.time,
 				slug: a.slug
 			}
 		})
+	}
+
+	initImage(url) {
+		let img = new Image()
+		img.src = url
 	}
 
 	normalizeDate(d) {
