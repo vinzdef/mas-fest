@@ -103,17 +103,17 @@
         &Column {
             flex: 1 1;
             min-width: calc(33% - 3rem);
-
-            @media (max-width: 900px) {
-                min-width: 100%;
-            }
-
+            position: relative;
             margin: 0 1rem 2rem;
             padding: 2rem;
-            background-color: $c-dark;
             color: white;
             font-weight: lighter;
-            @include elevation(1);
+            background-color: $c-accent;
+
+            * {
+                position: relative;
+                z-index: 1;
+            }
 
             b {
                 font-weight: bolder;
@@ -131,6 +131,47 @@
             &.full {
                 width: 100%;
                 padding-bottom: 1rem;
+            }
+
+            &:after {
+                @include elevation(1);
+                content: '';
+                display: block;
+                position: absolute;
+                left: -10%;
+                top: 0;
+                bottom: 0;
+                right: -10%;
+                background-color: $c-dark;
+            }
+
+            &:after {
+                @include elevation(1);
+                content: '';
+                display: block;
+                position: absolute;
+                left: 0;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                background-color: $c-dark;
+            }
+
+            @media (max-width: 900px) {
+                min-width: 100%;
+
+                &:after {
+                    left: -10%;
+                    right: -10%;
+                }
+
+                &:nth-child(odd):after {
+                    transform: rotate(0.7deg)
+                }
+
+                &:nth-child(even):after {
+                    transform: rotate(-0.7deg)
+                }
             }
         }
     }
