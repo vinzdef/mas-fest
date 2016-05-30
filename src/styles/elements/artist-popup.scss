@@ -17,7 +17,7 @@
     &_Content {
         @include elevation(2);
         max-width: 800px;
-        width: 80%;
+        width: 70%;
         height: 90%;
 
         background-color: #fff;
@@ -29,7 +29,7 @@
         width: 100%;
         height: 14rem;
         background-size: cover;
-        background-position: center center;
+        background-position: top;
     }
 
     .Close {
@@ -60,13 +60,51 @@
         margin-top: 1rem;
         font-weight: bolder;
         margin-bottom: 2rem;
+        display: inline-block;
     }
+
+    .Link {
+        margin-left: 1rem;
+        color: $c-accent;
+        cursor: hand;
+        cursor: pointer;
+        display: inline-block;
+        width: 1rem;
+        height: 1rem;
+        transition: background-image 0.2s;
+        opacity: 0.8;
+        background: url(../assets/images/link.png);
+        background-size: contain;
+        background-position: center center;
+        background-repeat: no-repeat;
+
+        &:hover {
+            background-image: url(../assets/images/link-yellow.png);
+        }
+    }
+
+
+
 
     .Bio {
         font-size: 1.2rem;
         line-height: 1.2em;
         overflow-y: auto;
+        overflow-x: hidden;
         padding-right: 1rem;
+        line-height: 1.5rem;
+
+        a {
+            text-decoration: none;
+            border-bottom: 1px solid darken($c-accent, 10%);
+            color: inherit;
+            color: currentColor;
+            color: darken($c-accent, 10%);
+        }
+
+        p:not(:last-child) {
+            margin-bottom: 1.5rem;
+        }
     }
 
 

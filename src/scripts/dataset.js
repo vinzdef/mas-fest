@@ -25,7 +25,7 @@ export default class Dataset {
 			return {
 				name: a.name,
 				bio: a.bio,
-				url: a.url,
+				link: a.link,
 				image,
 				date: this.normalizeDate(a.date),
 				time: a.time,

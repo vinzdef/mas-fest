@@ -42,8 +42,9 @@ export default class ArtistPopup {
 	}
 
 	fill(artistModel) {
+		this.element.find('.Link').attr('href', artistModel.link)
 		this.element.find('.Image').css('background-image', `url(${artistModel.image})`)
-		this.element.find('.Bio').text(artistModel.bio)
+		this.element.find('.Bio').html(artistModel.bio)
 		this.element.find('.Name').text(artistModel.name)
 	}
 }
