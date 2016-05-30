@@ -21,9 +21,6 @@ export default class Application {
 		this.schedule = new Schedule()
 		this.artistPopup = new ArtistPopup()
 
-		this.router = new Router()
-		this.scrollHandler = new ScrollHandler()
-		this.menu = new Menu()
 
 		this.dataset = new Dataset()
 		this.dataset.fetch(CONFIG.sheet, this.onDataRecevied.bind(this))
@@ -42,6 +39,10 @@ export default class Application {
 		if (this.dataLoaded && this.imagesLoaded) {
 			this.loading.fadeOut()
 			unlockScroll()
+
+			this.router = new Router()
+			this.scrollHandler = new ScrollHandler()
+			this.menu = new Menu()
 		}
 	}
 }

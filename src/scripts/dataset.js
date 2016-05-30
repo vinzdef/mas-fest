@@ -14,6 +14,7 @@ export default class Dataset {
 	onDataReceived(data, callback) {
 		this.data = data
 		this.artists = this.getArtists(data)
+		this.fillCopy(data['Copy'].elements)
 		callback(this.artists)
 	}
 
@@ -30,6 +31,14 @@ export default class Dataset {
 				date: this.normalizeDate(a.date),
 				time: a.time,
 				slug: a.slug
+			}
+		})
+	}
+
+	fillCopy(copy) {
+		copy.forEach(c => {
+			if (c.name == 'frontiere') {
+				$('#Tema > p').html(c.content)
 			}
 		})
 	}

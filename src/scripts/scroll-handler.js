@@ -3,6 +3,7 @@ import $ from 'jquery'
 export default class ScrollHandler {
 	constructor() {
 		this.beacons = $('[data-route]')
+		this.firstScroll = true
 		$(window).on('scroll', this.onScroll.bind(this))
 	}
 
