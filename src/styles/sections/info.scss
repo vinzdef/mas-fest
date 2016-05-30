@@ -1,0 +1,191 @@
+#Info {
+    background-color: $c-bkg;
+    color: $c-dark;
+    line-height: 1.2em;
+    font-size: 1.15rem;
+    padding-bottom: 2rem;
+
+    a {
+        color: $c-accent;
+        text-decoration: none;
+    }
+
+    p {
+        margin-bottom: 1rem;
+    }
+
+    .CardInfo {
+        width: 100%;
+        background-color: $c-bkg;
+        padding: 2rem 2rem 1rem;
+        position: relative;
+        overflow: hidden;
+
+        .Content {
+            position: relative;
+            z-index: 1;
+        }
+
+        &:after {
+            position: absolute;
+            content: '';
+            right: -100px;
+            width: 4000px;
+            height: 180px;
+            transform: rotate(2.5deg);
+            top: -160px;
+            display: block;
+            background-color: $c-accent;
+            z-index: 0;
+            @include elevation(1);
+        }
+
+        h3 {
+            display: block;
+            text-align: right;
+            width: 100%;
+            padding: 1rem 0;
+            color: $c-bkg;
+            font-size: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        a {
+            color: $c-accent;
+            text-decoration: none;
+        }
+
+        & > p:first-child {
+            display: none;
+            color: red;
+            font-weight: bolder;
+            margin-bottom: 2rem;
+        }
+
+        u {
+            text-decoration: none;
+            padding-bottom: 0.7rem;
+            display: block;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 1rem;
+            margin: 2rem 0;
+
+            li {
+                position: relative;
+                margin: 0.5rem 0 0.8rem;
+                padding-left: 1rem;
+
+                &:before {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    top: -0.1rem;
+                    bottom: 0.1rem;
+                    width: 0.1rem;
+                    background-color: $c-accent;
+                }
+            }
+        }
+    }
+
+    .Info {
+        padding: 3rem 0 2rem;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-content: center;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        &Column {
+            flex: 1 1;
+            min-width: calc(33% - 3rem);
+
+            @media (max-width: 900px) {
+                min-width: 100%;
+            }
+
+            margin: 0 1rem 2rem;
+            padding: 2rem;
+            background-color: $c-dark;
+            color: white;
+            font-weight: lighter;
+            @include elevation(1);
+
+            b {
+                font-weight: bolder;
+            }
+
+            h2 {
+                color: $c-accent;
+                margin-bottom: 1rem;
+            }
+
+            .tag {
+                color: $c-accent;
+            }
+
+            &.full {
+                width: 100%;
+                padding-bottom: 1rem;
+            }
+        }
+    }
+
+    .Location {
+        position: relative;
+        overflow: hidden;
+        height: 500px;
+
+        &:after {
+            position: absolute;
+            content: '';
+            left: -100px;
+            width: 4000px;
+            height: 180px;
+            transform: rotate(-2.5deg);
+            top: -120px;
+            display: block;
+            background-color: $c-accent;
+            z-index: 0;
+            @include elevation(1);
+        }
+
+        .MapAnchor {
+            color: $c-dark;
+            padding-bottom: 0.2rem;
+        }
+
+        .Content {
+            position: relative;
+            z-index: 1;
+            padding: 2rem 2rem 1rem;
+        }
+
+        .Map {
+            width: 100%;
+            height: 84%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            z-index: 0;
+            cursor: hand;
+            cursor: pointer;
+        }
+
+        h3 {
+            padding: 1rem 0 0.5rem;
+            color: $c-bkg;
+            font-size: 3rem;
+            width: 100%;
+            height: 4rem;
+        }
+
+        p {
+            font-weight: bold;
+        }
+    }
+}

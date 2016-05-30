@@ -6,10 +6,10 @@
         width: auto;
     }
 
-    min-height: calc(100% - 4.5rem);
+    min-height: calc(100vh - 4.5rem);
 
     @media(max-width: $screen-small) {
-        min-height: calc(100% - 3.5rem);
+        min-height: calc(100vh - 3.5rem);
         .IntroLogo {
             top: 48%;
         }

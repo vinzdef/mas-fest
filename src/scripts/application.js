@@ -6,6 +6,7 @@ import Schedule from './schedule'
 import ScrollHandler from './scroll-handler'
 import ArtistPopup from './artist-popup'
 import Menu from './menu'
+import Map from './map'
 
 import { lockScroll, unlockScroll } from './utils'
 
@@ -21,6 +22,10 @@ export default class Application {
 		this.schedule = new Schedule()
 		this.artistPopup = new ArtistPopup()
 
+		window.initMap = () => {
+			this.map = new Map()
+		}
+		$('body').append('<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBAsezQtZsttrVU7YXEU8-ztk0Lm8T2jBQ&callback=initMap" async defer></script>')
 
 		this.dataset = new Dataset()
 		this.dataset.fetch(CONFIG.sheet, this.onDataRecevied.bind(this))

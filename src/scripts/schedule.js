@@ -50,7 +50,7 @@ export default class Schedule {
 			template.find('.Artist_Hour').text(a.time)
 			template.find('.Artist_Bio').text(a.bio)
 			template.find('.Artist_Photo').css('background-image', `url(${a.image})`)
-			template.attr('href', `artist/${a.slug}`)
+			template.attr('href', `artisti/${a.slug}`)
 			a.template = template
 		})
 	}

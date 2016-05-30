@@ -12,14 +12,14 @@
     </style>
 </head>
 <body>
-    <nav id="Menu">
+    <!--nav id="Menu">
         <ul>
             <li><a class="Menu_Link internal" href="/">Home</a></li>
-            <li><a class="Menu_Link internal" href="/schedule">Programma</a></li>
-            <li><a class="Menu_Link internal" href="/tema">Frontiere</a></li>
-            <li><a class="Menu_Link internal" href="/about">About</a></li>
+            <li><a class="Menu_Link internal" href="/programma">Programma</a></li>
+            <li><a class="Menu_Link internal" href="/tema">Tema</a></li>
+            <li><a class="Menu_Link internal" href="/info">Info</a></li>
         </ul>
-    </nav>
+    </nav-->
 
     <div id="Root">
         <section id="Home" data-route="/">
@@ -28,8 +28,8 @@
             </h1>
         </section>
 
-        <section id="Schedule" data-route="/schedule">
-            <a class="DaySelect internal" href="/schedule">
+        <section id="Schedule" data-route="/programma">
+            <a class="DaySelect internal" href="/programma">
                 <label class="DaySelect_Label" for="DaySelect">Giorno:
                     <select id="DaySelect" name="DaySelect" class="DaySelect_Input">
                     </select>
@@ -40,28 +40,21 @@
             </div>
         </section>
 
-        <section id="Tema" data-route="/tema">
-            <p></p>
-        </section>
-        <section id="About" data-route="/about"></section>
-        <section id="Footer">
-            <div class="Socials Column">
-                <a href="//facebook.com">f</a>
+        <!--section id="Tema" data-route="/tema">
+            <div class="Content"></div>
+        </section-->
+        <section id="Info" data-route="/info">
+            <div class="Location">
+            <div class="Map" src=""></div>
+
+                <div class="Content">
+                    <h3>Location</h3>
+                    <p><a class="MapAnchor" target="_blank" href="https://goo.gl/maps/sKsbLsCUFE82">Parco Santo Spirito, Avellino</a></p>
+                </div>
             </div>
-
-            <div class="Partners Column">
-                <ul>
-                    <li><a href="">P1</a></li>
-                    <li><a href="">P1</a></li>
-                    <li><a href="">P1</a></li>
-                    <li><a href="">P1</a></li>
-                    <li><a href="">P1</a></li>
-                </ul>
-            </div>
-
-            <div class="MadeBy">with &lt;3 by <a href="//twitter.com/ghzmdr" class="ghzmdr">ghzmdr</a></div>
-
+            <div class="Content"></div>
         </section>
+        <div class="MadeBy">design &amp; code by <a href="//twitter.com/ghzmdr" target="_blank" class="ghzmdr">ghzmdr</a></div>
     </div>
 
 

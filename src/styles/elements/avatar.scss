@@ -1,12 +1,17 @@
 .Avatar {
+    background-color: white;
     animation-name: ChangeBg;
-    animation-duration: 1s;
+    animation-duration: 2s;
     animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-delay: 0s;
 }
 
 @keyframes ChangeBg {
-    0% {background-color: $c-bkg}
-    33% {background-color: white}
-    67% {background-color: #ae723c}
-    100% {background-color: $c-bkg}
+    0% {background-color: white}
+    10% {background-color: $c-bkg}
+    30% {background-color: #743f2d}
+    50% {background-color: #5fc900}
+    70% {background-color: #893391}
+    90% {background-color: white}
 }

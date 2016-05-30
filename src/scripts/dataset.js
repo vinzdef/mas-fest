@@ -38,7 +38,9 @@ export default class Dataset {
 	fillCopy(copy) {
 		copy.forEach(c => {
 			if (c.name == 'frontiere') {
-				$('#Tema > p').html(c.content)
+				$('#Tema > .Content').html(c.content)
+			} else if (c.name == 'about') {
+				$('#Info > .Content').html(c.content)
 			}
 		})
 	}

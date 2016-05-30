@@ -64,7 +64,8 @@
     }
 
     .Link {
-        margin-left: 1rem;
+        margin-left: 1.5rem;
+        position: relative;
         color: $c-accent;
         cursor: hand;
         cursor: pointer;
@@ -80,6 +81,15 @@
 
         &:hover {
             background-image: url(../assets/images/link-yellow.png);
+        }
+
+        &:before {
+            position: absolute;
+            content: '-';
+            height: 1rem;
+            line-height: 1rem;
+            left: 0;
+            top: 0;
         }
     }
 

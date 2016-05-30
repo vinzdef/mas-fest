@@ -37,8 +37,8 @@ export default class Router {
 			return
 		}
 
-		if (state.pathname.indexOf('artist') >= 0) {
-			const slug = state.pathname.match(/artist\/(.*)$/)[1]
+		if (state.pathname.indexOf('artisti') >= 0) {
+			const slug = state.pathname.match(/artisti\/(.*)$/)[1]
 			$(window).trigger('MAS:popup-open', { slug })
 			this.artistPopupOpen = true
 		} else {
