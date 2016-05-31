@@ -4,6 +4,18 @@
         top: 52%;
         position: fixed;
         width: auto;
+
+        display: flex;
+        img {
+            flex-direction: column;
+            position: relative;
+            z-index: 1;
+
+            &:nth-child(2) {
+                margin: 0 -11rem;
+                z-index: 0;
+            }
+        }
     }
 
     min-height: calc(100vh - 4.5rem);
