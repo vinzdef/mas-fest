@@ -4,6 +4,8 @@
         top: 52%;
         position: fixed;
         width: auto;
+        width: 100%;
+        overflow: hidden;
 
         display: flex;
         img {

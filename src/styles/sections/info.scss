@@ -100,6 +100,10 @@
         justify-content: center;
         flex-wrap: wrap;
 
+        @media (orientation: portrait) {
+            display: block;
+        }
+
         &Column {
             flex: 1 1;
             min-width: calc(33% - 3rem);
@@ -158,7 +162,7 @@
                 background-color: $c-dark;
             }
 
-            @media (max-width: 900px) {
+            @media (orientation: portrait) {
                 min-width: 100%;
 
                 &:after {
@@ -173,6 +177,8 @@
                 &:nth-child(even):after {
                     transform: rotate(-0.7deg)
                 }
+
+                margin-left: 0;
             }
         }
     }
