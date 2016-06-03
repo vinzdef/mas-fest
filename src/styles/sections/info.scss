@@ -94,19 +94,15 @@
     .Info {
         padding: 3rem 0 2rem;
         width: 100%;
-        display: flex;
-        flex-direction: row;
-        align-content: center;
-        justify-content: center;
-        flex-wrap: wrap;
+        overflow: auto;
 
         @media (orientation: portrait) {
             display: block;
         }
 
         &Column {
-            flex: 1 1;
-            min-width: calc(33% - 3rem);
+            float: left;
+            width: calc(33% - 2rem);
             position: relative;
             margin: 0 1rem 2rem;
             padding: 2rem;
@@ -134,8 +130,9 @@
             }
 
             &.full {
-                width: 100%;
+                width: calc(100% - 2rem);
                 padding-bottom: 1rem;
+                margin-bottom: 0;
             }
 
             &:after {

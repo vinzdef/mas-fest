@@ -6,7 +6,6 @@
         position: relative;
         min-height: 15rem;
         @include elevation(1);
-        transform: translateZ(0.0001px);
         cursor: pointer; cursor: hand;
 
         transition: box-shadow 0.2s, transform 0.4s;
