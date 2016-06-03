@@ -49,6 +49,12 @@
             display: flex;
             margin-right: 1rem;
             margin-bottom: 1rem;
+
+            @media (orientation: portrait) {
+                width: 100%;
+                margin-right: 0;
+                margin-left: 1rem;
+            }
         }
 
         .Letter {
