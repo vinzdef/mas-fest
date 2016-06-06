@@ -18,8 +18,9 @@
         top: 0;
         right: 0;
         z-index: 0;
+
         video {
-            display: none;
+            width: 100%;
         }
     }
 
@@ -27,6 +28,7 @@
         .Content {
             width: 100%;
             padding: 2rem 0;
+            position: relative;
 
             p, h4 {
                 padding-left: 1rem;
@@ -35,7 +37,26 @@
         }
 
         .Twelve {
+            height: auto;
             width: 100%;
+
+            position: absolute;
+
+            top: 100%;
+            left: 50%;
+            transform: translate(-50%, -100%);
+
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            height: 30rem;
+
+            video {
+                width: auto;
+                height: 15rem;
+                display: block;
+                opacity: 0.5;
+            }
         }
     }
 
