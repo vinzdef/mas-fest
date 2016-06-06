@@ -1,31 +1,43 @@
 #Home {
+    width: 100%;
+    min-height: auto;
+    height: calc(100% - 4.5rem);
+
     .IntroLogo {
         @include center-absolute;
+
         top: 52%;
-        position: fixed;
-        width: auto;
-        width: 100%;
-        overflow: hidden;
-
+        max-width: calc(1080px);
         display: flex;
-        img {
-            flex-direction: column;
-            position: relative;
-            z-index: 1;
 
-            &:nth-child(2) {
-                margin: 0 -11rem;
-                z-index: 0;
-            }
+        width: 100%;
+
+        video {
+            flex: 0 0;
+            flex-basis: 33%;
+
+            width: 33%;
+            height: auto;
         }
     }
 
-    min-height: calc(100vh - 4.5rem);
+    html.ithing & {
+        min-height: 10px;
+    }
 
-    @media(max-width: $screen-small) {
-        min-height: calc(100vh - 3.5rem);
+    @media (orientation: portrait) {
+        height: calc(100% - 3.5rem);
+
         .IntroLogo {
+            padding-top: 2rem;
+            height: 100%;
             top: 48%;
+            flex-direction: column;
+
+            video {
+                height: 33%;
+                width: auto;
+            }
         }
     }
 }

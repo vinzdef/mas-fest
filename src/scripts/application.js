@@ -33,10 +33,18 @@ export default class Application {
 		this.dataset.fetch(CONFIG.sheet, this.onDataRecevied.bind(this))
 
 		this.initVideos()
+
+		if (navigator.userAgent.indexOf('iPhone') >= 0 || navigator.userAgent.indexOf('iPad') >= 0) {
+			$('html').addClass('ithing')
+		}
 	}
 
 	initVideos() {
-		makeVideoPlayableInline($('video')[0], false)
+		const mvpi = (el) => {
+			makeVideoPlayableInline(el, false, false)
+		}
+
+		$('video').get().forEach(mvpi)
 	}
 
 
