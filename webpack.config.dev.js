@@ -25,7 +25,7 @@ module.exports = {
 				test: /\.scss$/,
 				loader: 'style!css?sourceMap!postcss?sourceMap!sass?sourceMap'
 			},
-			{ test: /\.(svg|jpg|png|gif|woff)$/, loader: 'url'},
+			{ test: /\.(svg|jpg|png|gif|woff)$/, loader: 'url?limit=10000'},
 			{ test: /\.json$/, loader: 'json' },
 			{ test: /\.html$/, loader: 'html' }
 		]
