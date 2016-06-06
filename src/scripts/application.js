@@ -18,16 +18,24 @@ const CONFIG = {
 
 export default class Application {
 	constructor() {
+
+		window.initMap = () => { this.map = new Map() }
+		$('body').append('<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBAsezQtZsttrVU7YXEU8-ztk0Lm8T2jBQ&callback=initMap" async defer></script>')
+
+		if (!this.isWebmSupported()) {
+			$('html').addClass('low-pink')
+		}
+
+		const $avatar = $('#Loader .Avatar')
+		$avatar.ready(() => {
+			$avatar.addClass('ready')
+		})
+
 		this.loading = $('#Loader')
 		lockScroll()
 
 		this.schedule = new Schedule()
 		this.artistPopup = new ArtistPopup()
-
-		window.initMap = () => {
-			this.map = new Map()
-		}
-		$('body').append('<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBAsezQtZsttrVU7YXEU8-ztk0Lm8T2jBQ&callback=initMap" async defer></script>')
 
 		this.dataset = new Dataset()
 		this.dataset.fetch(CONFIG.sheet, this.onDataRecevied.bind(this))
@@ -39,12 +47,16 @@ export default class Application {
 		}
 	}
 
-	initVideos() {
-		const mvpi = (el) => {
-			makeVideoPlayableInline(el, false, false)
-		}
+	isWebmSupported() {
+		return $('video').get(0).canPlayType('video/webm; codecs="vp8, vorbis"') !== ''
+	}
 
-		$('video').get().forEach(mvpi)
+	initVideos() {
+		$('video').get().forEach(el => {
+			makeVideoPlayableInline(el, false)
+		})
+
+		$('video').ready(() => this.onMediaLoaded())
 	}
 
 
@@ -53,6 +65,11 @@ export default class Application {
 		this.artistPopup.onDataReceived(artists)
 
 		this.dataLoaded = true
+		this.checkLoading()
+	}
+
+	onMediaLoaded() {
+
 		this.imagesLoaded = true
 		this.checkLoading()
 	}

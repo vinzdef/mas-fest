@@ -4,7 +4,7 @@
   "description": "Music & Art Social Fest",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --content-base ./build --host 0.0.0.0 --port 9999 --inline --hot --colors --config webpack.config.dev.js",
+    "dev": "webpack-dev-server --content-base ./build --host 0.0.0.0 --port 9998 --inline --hot --colors --config webpack.config.dev.js",
     "build": "NODE_ENV=production webpack -p --progress --config webpack.config.prod.js",
     "deploy": "npm run build && firebase deploy"
   },
@@ -41,6 +41,7 @@
     "webpack-dev-server": "^1.14.1"
   },
   "dependencies": {
+    "@f/debounce": "^1.0.0",
     "history": "^2.1.1",
     "jquery": "^2.2.3",
     "normalize.css": "^4.1.1",

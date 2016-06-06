@@ -1,7 +1,15 @@
+html.low-pink {
+    background-color: #e786b1;
+}
+
 #Home {
     width: 100%;
     min-height: auto;
     height: calc(100% - 4.5rem);
+
+    html.low-pink & {
+        background-color: #e786b1;
+    }
 
     .IntroLogo {
         @include center-absolute;
@@ -12,12 +20,18 @@
 
         width: 100%;
 
-        video {
+        .VideoWrapper {
             flex: 0 0;
             flex-basis: 33%;
 
             width: 33%;
             height: auto;
+            overflow: hidden;
+
+            video {
+                display: block;
+                width: 101%;
+            }
         }
     }
 
@@ -34,9 +48,17 @@
             top: 48%;
             flex-direction: column;
 
-            video {
+            .VideoWrapper {
                 height: 33%;
                 width: auto;
+                text-align: center;
+                overflow: hidden;
+
+                video {
+                    display: inline-block;
+                    width: auto;
+                    height: 101%;
+                }
             }
         }
     }

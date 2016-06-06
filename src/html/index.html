@@ -24,18 +24,24 @@
     <div id="Root">
         <section id="Home" data-route="/">
             <div class="IntroLogo">
-                <video autoplay muted loop>
-                    <source src="../assets/videos/M.webm"/>
-                    <source src="../assets/videos/M.mp4"/>
-                 </video>
-                 <video autoplay muted loop>
-                    <source src="../assets/videos/A.webm"/>
-                    <source src="../assets/videos/A.mp4"/>
-                 </video>
-                 <video autoplay muted loop>
-                    <source src="../assets/videos/S.webm"/>
-                    <source src="../assets/videos/S.mp4"/>
-                 </video>
+                <div class="VideoWrapper">
+                    <video autoplay muted loop poster="../assets/images/letters/M.png">
+                        <source src="../assets/videos/M.webm"/>
+                        <source src="../assets/videos/M.mp4"/>
+                     </video>
+                </div>
+                 <div class="VideoWrapper">
+                     <video autoplay muted loop poster="../assets/images/letters/A.png">
+                        <source src="../assets/videos/A.webm"/>
+                        <source src="../assets/videos/A.mp4"/>
+                     </video>
+                </div>
+                 <div class="VideoWrapper">
+                     <video autoplay muted loop poster="../assets/images/letters/S.png">
+                        <source src="../assets/videos/S.webm"/>
+                        <source src="../assets/videos/S.mp4"/>
+                     </video>
+                </div>
             </div>
         </section>
 
@@ -52,17 +58,36 @@
         </section>
 
         <section id="Tema" data-route="/tema">
-            <div class="Content"></div>
-            <div class="Twelve">
-                <video autoplay muted loop>
-                    <source src="../assets/videos/X.webm"/>
-                    <source src="../assets/videos/X.mp4"/>
-                 </video>
-                 <video autoplay muted loop>
-                    <source src="../assets/videos/II.webm"/>
-                    <source src="../assets/videos/II.mp4"/>
-                 </video>
+            <div class="TopWrapper">
+                <div class="Dictionary">
+                    <h3>/fron&centerdot;ti&egrave;&centerdot;re/</h3>
+                    <h4>sostantivo femminile</h4>
+                    <ol>
+                        <li>Linea di confine di uno stato.</li>
+                        <li><b>fig.</b> Ostacolo, limite.</li>
+                    </ol>
+                    <p class="quote">
+                        l'amore non conosce f.
+                    </p>
+                    <p class="description">
+                        Linea che delimita o circoscrive un campo ideale
+                    </p>
+                    <p class="description">
+                        Discrimine fra mondi diversi e in contrasto, suscettibili di riferirsi a fenomeni che hanno luogo al margine di una data area (letteratura di f.), talvolta sentito anche come la soglia dell'ignoto, dell'avventura, del pericolo.
+                    </p>
+                </div>
+                <div class="Twelve">
+                    <video autoplay muted loop poster="../assets/images/letters/X.png">
+                        <source src="../assets/videos/X.webm"/>
+                        <source src="../assets/videos/X.mp4"/>
+                     </video>
+                     <video autoplay muted loop poster="../assets/images/letters/II.png">
+                        <source src="../assets/videos/II.webm"/>
+                        <source src="../assets/videos/II.mp4"/>
+                     </video>
+                </div>
             </div>
+            <div class="Content"></div>
         </section>
         <section id="Info" data-route="/info">
             <div class="Location">

@@ -26,9 +26,10 @@ module.exports = {
 				test: /\.scss$/,
 				loader: ExtractTextPlugin.extract('style-loader', 'css-loader?sourceMap!postcss-loader?sourceMap!sass-loader?sourceMap')
 			},
-			{ test: /\.(svg|jpg|png|gif|woff)$/, loader: 'url-loader?limit=10000'},
+			{ test: /\.(svg|jpg|png|gif|woff)$/, loader: 'url?limit=10000'},
+			{ test: /\.(mp4|webm)$/, loader: 'file'},
 			{ test: /\.json$/, loader: 'json' },
-			{ test: /\.html$/, loader: 'html' }
+			{ test: /\.html$/, loader: 'html?attrs[]=img:src&attrs[]=source:src&attrs[]=video:poster' }
 		]
 	},
 

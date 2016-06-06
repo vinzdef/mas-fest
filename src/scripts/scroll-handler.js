@@ -1,10 +1,11 @@
 import $ from 'jquery'
+import debounce from '@f/debounce'
 
 export default class ScrollHandler {
 	constructor() {
 		this.beacons = $('[data-route]')
 		this.firstScroll = true
-		$(window).on('scroll', this.onScroll.bind(this))
+		$(window).on('scroll', debounce(this.onScroll.bind(this), 400))
 	}
 
 	onScroll(e) {

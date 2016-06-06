@@ -1,6 +1,10 @@
 .Avatar {
     background-color: white;
-    animation-name: ChangeBg;
+
+    &.ready {
+        animation-name: ChangeBg;
+    }
+
     animation-duration: 2s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;

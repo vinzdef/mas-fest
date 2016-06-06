@@ -51,5 +51,7 @@ video::-webkit-media-controls-start-playback-button {
     width: 5px;
 }
 
-
+video {
+    pointer-events: none;
+}
 
