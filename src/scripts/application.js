@@ -8,6 +8,8 @@ import ArtistPopup from './artist-popup'
 import Menu from './menu'
 import Map from './map'
 
+import makeVideoPlayableInline from './vendors/iphone-inline-video'
+
 import { lockScroll, unlockScroll } from './utils'
 
 const CONFIG = {
@@ -29,7 +31,14 @@ export default class Application {
 
 		this.dataset = new Dataset()
 		this.dataset.fetch(CONFIG.sheet, this.onDataRecevied.bind(this))
+
+		this.initVideos()
 	}
+
+	initVideos() {
+		makeVideoPlayableInline($('video')[0], false)
+	}
+
 
 	onDataRecevied(artists) {
 		this.schedule.onDataReceived(artists)
