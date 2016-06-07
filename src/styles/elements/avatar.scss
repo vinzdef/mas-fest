@@ -1,7 +1,8 @@
 .Avatar {
-    background-color: white;
+    background-color: transparent;
 
     &.ready {
+        background-color: white;
         animation-name: ChangeBg;
     }
 
