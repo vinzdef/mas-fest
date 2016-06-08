@@ -21,6 +21,9 @@
         }
 
         img {
+            &:first-child {
+                max-width: 20%;
+            }
             width: auto;
             height: auto;
             max-height: 3rem;
@@ -33,11 +36,6 @@
         background-color: transparent;
         .Logos {
             display: none;
-            flex-direction: column;
-            img {
-                width: 80%;
-                margin-bottom: 1rem;
-            }
         }
     }
 }

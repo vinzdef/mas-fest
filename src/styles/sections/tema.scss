@@ -52,13 +52,12 @@
     .Letters {
         display: flex;
         flex-wrap: wrap;
-        justify-content: center;
-        margin: 4rem 0 2rem;
+        justify-content: space-between;
+        padding: 4rem 0 4rem;
 
         .LetterWrapper {
-            width: calc(25% - 4rem);
+            width: calc(25%);
             display: flex;
-            margin-right: 1rem;
             margin-bottom: 1rem;
 
         }
@@ -74,7 +73,7 @@
         .Letter {
             font-weight: bold;
             font-size: 2rem;
-            margin-right: 1rem;
+            margin-right: 1.2rem;
             width: 3rem;
             text-align: center;
         }

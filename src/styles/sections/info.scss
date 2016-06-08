@@ -100,12 +100,17 @@
             display: block;
         }
 
+
+
         &Column {
             float: left;
             width: calc(33% - 2rem);
+
+
             position: relative;
             margin: 0 1rem 2rem;
             padding: 2rem;
+
             color: white;
             font-weight: lighter;
             overflow: hidden;
@@ -135,6 +140,15 @@
                 margin-bottom: 0;
             }
 
+            @media (max-width: 800px) {
+                &.full {
+                    width: 100%;
+                }
+                margin-left: 0;
+                margin-right: 0;
+                width: 100%;
+            }
+
             &:after {
                 @include elevation(1);
                 content: '';
@@ -161,6 +175,8 @@
 
             @media (orientation: portrait) {
                 min-width: 100%;
+                margin-left: 0;
+                margin-right: 0;
 
                 &:after {
                     left: -10%;
@@ -212,7 +228,7 @@
 
         .Map {
             width: 100%;
-            height: 84%;
+            height: 100%;
             position: absolute;
             bottom: 0;
             left: 0;
