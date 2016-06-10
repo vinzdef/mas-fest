@@ -1,6 +1,7 @@
 #Schedule {
     background-color: $c-schedule-bkg;
     height: auto;
+    min-height: 1px;
     box-shadow: 0 -4px 10px rgba(#000, 0.25), 0 8px 10px rgba(#000, 0.2);
 
     & > * {
